@@ -30,6 +30,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/style/bootstrap.min.css",
+              "src/assets/style/style.css",
               "src/styles.scss"
             ],
             "scripts": []
