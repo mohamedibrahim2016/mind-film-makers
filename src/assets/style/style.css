@@ -20,7 +20,7 @@ Globals
   src: url('../font/mfm-display-bold.eot');
   src: url('../font/mfm-display-bold.eot?#iefix') format('embedded-opentype'),
     url('../font/mfm-display-bold.woff2') format('woff2'),
-    url('../font/mfm-display-bold-woff.woff') format('woff'),
+    url('../font/mfm-display-bold.woff') format('woff'),
     url('../font/mfm-display-bold.ttf') format('truetype'),
     url('../font/mfm-display-bold.svg#mfm-display-bold') format('svg');
   font-weight: bold;
