@@ -59,15 +59,18 @@ Globals
 
 .bg-mfm {
   /* background-image: url(../../assets/img/bg.jpeg); */
+  background-color: black;
   position: absolute;
   z-index: -99999;
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  /* background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  filter: blur(0.9rem);
-  -webkit-filter: blur(0.9rem);
+  background-size: cover; */
+  /* filter: blur(0.9rem);
+  -webkit-filter: blur(0.9rem); */
 }
 .mfm-logo {
   filter: invert(100%);
