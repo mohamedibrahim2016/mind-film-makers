@@ -7,7 +7,7 @@ Globals
   src: url('../font/mfm-display-regular.eot');
   src: url('../font/mfm-display-regular.eot?#iefix') format('embedded-opentype'),
     url('../font/mfm-display-regular.woff2') format('woff2'),
-    /* url('../font/mfm-display-regular-woff.woff') format('woff'), */
+    url('../font/mfm-display-regular.woff') format('woff'),
     url('../font/mfm-display-regular.ttf') format('truetype'),
     url('../font/mfm-display-regular.svg#notosansdisplay-regular') format('svg');
   font-weight: normal;
@@ -17,12 +17,12 @@ Globals
 
 @font-face {
   font-family: 'mfm-bold';
-  /* src: url('../font/notosansdisplay-bold.eot');
-  src: url('../font/notosansdisplay-bold.eot?#iefix') format('embedded-opentype'),
-    url('../font/notosansdisplay-bold.woff2') format('woff2'),
-    url('../font/notosansdisplay-bold-woff.woff') format('woff'),
-    url('../font/notosansdisplay-bold.ttf') format('truetype'),
-    url('../font/notosansdisplay-bold.svg#notosansdisplay-bold') format('svg'); */
+  src: url('../font/mfm-display-bold.eot');
+  src: url('../font/mfm-display-bold.eot?#iefix') format('embedded-opentype'),
+    url('../font/mfm-display-bold.woff2') format('woff2'),
+    url('../font/mfm-display-bold.woff') format('woff'),
+    url('../font/mfm-display-bold.ttf') format('truetype'),
+    url('../font/mfm-display-bold.svg#mfm-display-bold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -49,7 +49,7 @@ Globals
   src: url('../font/mfm-arabic-bold.eot?#iefix') format('embedded-opentype'),
     url('../font/mfm-arabic-bold.woff2') format('woff2'),
     url('../font/mfm-arabic-bold.woff') format('woff'),
-    /* url('../font/mfm-arabic-bold-ttf.ttf') format('truetype'), */
+    url('../font/mfm-arabic-bold.ttf') format('truetype'),
     url('../font/mfm-arabic-bold.svg#notosansarabic-bold') format('svg');
   font-weight: bold;
   font-style: normal;
@@ -58,7 +58,7 @@ Globals
 /* font arabic */
 
 .bg-mfm {
-  background-image: url(../../assets/img/bg.jpeg);
+  /* background-image: url(../../assets/img/bg.jpeg); */
   position: absolute;
   z-index: -99999;
   width: 100%;
