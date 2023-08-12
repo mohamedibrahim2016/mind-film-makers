@@ -55,7 +55,7 @@
 .top-header-right-side {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 
     p {
         color: var(--whiteColor);
@@ -143,14 +143,14 @@
     }
     .top-header-right-side {
         display: block;
-    
+
         p {
             margin-bottom: 10px;
         }
         .social-links {
             margin-left: 0;
             top: 0;
-    
+
             li {
                 margin: {
                     left: 10px;
@@ -212,7 +212,7 @@
     .top-header-right-side {
         justify-content: center;
         margin-top: 8px;
-    
+
         .social-links {
             margin-left: 20px;
             top: 1px;
@@ -237,7 +237,7 @@
         li {
             margin-right: 20px;
             padding-left: 26px;
-    
+
             i {
                 font-size: 20px;
                 margin-top: 0;
@@ -250,10 +250,10 @@
     .top-header-right-side {
         .social-links {
             margin-left: 15px;
-    
+
             li {
                 margin-right: 15px;
-    
+
                 &::before {
                     right: -6px;
                 }
