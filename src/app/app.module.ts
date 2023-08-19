@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PreLaunchComponent } from './pre-launch/pre-launch.component';
 import { AllComponentsComponent } from './all-components/all-components.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -31,7 +34,9 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
       }
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

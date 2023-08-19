@@ -1,1 +1,14 @@
-{}
+{
+  "targets": {
+    "mindfilmmakers": {
+      "hosting": {
+        "mind-film-makers": [
+          "mindfilmmakers"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mindfilmmakers"
+  }
+}

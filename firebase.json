@@ -1,16 +1,23 @@
 {
-  "hosting": {
-    "public": "dist/mind-film-makers",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "public": "dist/mind-film-makers",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "mind-film-makers",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
 }
