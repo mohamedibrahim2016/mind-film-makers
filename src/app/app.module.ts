@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,8 @@ import { AllComponentsComponent } from './all-components/all-components.componen
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,7 +30,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AllComponentsComponent
   ],
   imports: [
+    RouterModule,
+    SharedModule,
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -36,9 +44,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    // NgxScrollTopModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

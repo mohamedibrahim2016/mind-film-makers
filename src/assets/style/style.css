@@ -4,12 +4,12 @@ Globals
 /* font english */
 @font-face {
   font-family: 'mfm-regular';
-  src: url('../font/mfm-display-regular.eot');
-  src: url('../font/mfm-display-regular.eot?#iefix') format('embedded-opentype'),
-    url('../font/mfm-display-regular.woff2') format('woff2'),
-    url('../font/mfm-display-regular.woff') format('woff'),
-    url('../font/mfm-display-regular.ttf') format('truetype'),
-    url('../font/mfm-display-regular.svg#notosansdisplay-regular') format('svg');
+  src: url('../fonts/mfm-display-regular.eot');
+  src: url('../fonts/mfm-display-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/mfm-display-regular.woff2') format('woff2'),
+    url('../fonts/mfm-display-regular.woff') format('woff'),
+    url('../fonts/mfm-display-regular.ttf') format('truetype'),
+    url('../fonts/mfm-display-regular.svg#notosansdisplay-regular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -17,12 +17,12 @@ Globals
 
 @font-face {
   font-family: 'mfm-bold';
-  src: url('../font/mfm-display-bold.eot');
-  src: url('../font/mfm-display-bold.eot?#iefix') format('embedded-opentype'),
-    url('../font/mfm-display-bold.woff2') format('woff2'),
-    url('../font/mfm-display-bold.woff') format('woff'),
-    url('../font/mfm-display-bold.ttf') format('truetype'),
-    url('../font/mfm-display-bold.svg#mfm-display-bold') format('svg');
+  src: url('../fonts/mfm-display-bold.eot');
+  src: url('../fonts/mfm-display-bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/mfm-display-bold.woff2') format('woff2'),
+    url('../fonts/mfm-display-bold.woff') format('woff'),
+    url('../fonts/mfm-display-bold.ttf') format('truetype'),
+    url('../fonts/mfm-display-bold.svg#mfm-display-bold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -32,12 +32,12 @@ Globals
 /* font arabic */
 @font-face {
   font-family: 'mfm-arabic-regular';
-  src: url('../font/mfm-arabic-regular.eot');
-  src: url('../font/mfm-arabic-regular.eot?#iefix') format('embedded-opentype'),
-    url('../font/mfm-arabic-regular.woff2') format('woff2'),
-    url('../font/mfm-arabic-regular.woff') format('woff'),
-    url('../font/mfm-arabic-regular.ttf') format('truetype'),
-    url('../font/mfm-arabic-regular.svg#notosansarabic-regular') format('svg');
+  src: url('../fonts/mfm-arabic-regular.eot');
+  src: url('../fonts/mfm-arabic-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/mfm-arabic-regular.woff2') format('woff2'),
+    url('../fonts/mfm-arabic-regular.woff') format('woff'),
+    url('../fonts/mfm-arabic-regular.ttf') format('truetype'),
+    url('../fonts/mfm-arabic-regular.svg#notosansarabic-regular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -45,12 +45,12 @@ Globals
 
 @font-face {
   font-family: 'mfm-arabic-bold';
-  src: url('../font/mfm-arabic-bold.eot');
-  src: url('../font/mfm-arabic-bold.eot?#iefix') format('embedded-opentype'),
-    url('../font/mfm-arabic-bold.woff2') format('woff2'),
-    url('../font/mfm-arabic-bold.woff') format('woff'),
-    url('../font/mfm-arabic-bold.ttf') format('truetype'),
-    url('../font/mfm-arabic-bold.svg#notosansarabic-bold') format('svg');
+  src: url('../fonts/mfm-arabic-bold.eot');
+  src: url('../fonts/mfm-arabic-bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/mfm-arabic-bold.woff2') format('woff2'),
+    url('../fonts/mfm-arabic-bold.woff') format('woff'),
+    url('../fonts/mfm-arabic-bold.ttf') format('truetype'),
+    url('../fonts/mfm-arabic-bold.svg#notosansarabic-bold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -58,7 +58,7 @@ Globals
 /* font arabic */
 
 .bg-mfm {
-  /* background-image: url(../../assets/img/bg.jpeg); */
+  background-image: url(../../assets/img/bg.jpeg);
   position: absolute;
   z-index: -99999;
   width: 100%;
