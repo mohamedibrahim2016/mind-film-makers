@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, collectionData, collection, getDocs, setDoc, addDoc, doc, query, and, where } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, getDocs, setDoc, addDoc, doc, query, and, where, getDoc, deleteDoc, updateDoc, arrayUnion } from '@angular/fire/firestore';
 import { UtilitiesService } from './utilities.service';
 // import { AngularFirestore } from '@angular/fire/compat/firestore';
 
@@ -47,6 +47,15 @@ export class FirestoreDbService {
     }
   }
 
+  async loadDocumentFromCollection(collectionName: string, documentId: string) {
+    const docRef = doc(this.firestore, collectionName, documentId);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return docSnap.data();
+    }
+    return false;
+  }
+
   addNewDocumentToCollection(collectionName: string, document: any): boolean {
     try {
       addDoc(collection(this.firestore, collectionName), document);
@@ -55,6 +64,36 @@ export class FirestoreDbService {
       console.log('add New Doc error: ', error);
       return false;
     }
+  }
+
+  async updateSelectedDocument(
+    collectionName: string,
+    documentId: string,
+    updatedFieldObject: any
+  ) {
+    try {
+      const docRef = doc(this.firestore, collectionName, documentId);
+      await updateDoc(docRef, updatedFieldObject);
+    } catch (error) {
+      console.log('Error while updating doc: ', error);
+    }
+  }
+
+  updateDocumentArrayField(
+    collectionName: string,
+    documentId: string,
+    arrFieldName: string,
+    newValue: string
+  ) {
+    const updateObject = { [arrFieldName]: arrayUnion(newValue) };
+    this.updateSelectedDocument(collectionName, documentId, updateObject);
+  }
+
+  async deleteDocumentFromCollection(
+    collectionName: string,
+    documentId: string
+  ) {
+    await deleteDoc(doc(this.firestore, collectionName, documentId));
   }
 
   async validateUser(userName: string, password: string) {

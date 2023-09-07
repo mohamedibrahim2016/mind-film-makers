@@ -9,16 +9,15 @@ import { UtilitiesService } from './utilities.service';
 export class UsersUtilService {
 
   users!: User[];
+  currentCollection = 'users';
 
   constructor(private db: FirestoreDbService) {
     // this.addUser('ali', 'ali@gmail.com', '123');
-    this.login('admin', '@dm!n#123')
-    // this.login('ali@gmail.com', '123')
-    this.addUser('ali', 'ali2@gmail.com', '123');
+    // this.addUser('ali', 'ali2@gmail.com', '123');
    }
 
   async getUsers() {
-    this.users =  await this.db.loadCollection('users') as User[];
+    this.users =  await this.db.loadCollection(this.currentCollection) as User[];
     return this.users;
   }
 
@@ -42,7 +41,7 @@ export class UsersUtilService {
         token: UtilitiesService.generateToken(),
         creator: this.db.getAuthCredentials()?.token || ''
       }
-      this.db.addToCollection('users', user, email);
+      this.db.addToCollection(this.currentCollection, user, email);
       
     } catch (error) {
       console.log('Error in add user', error)
@@ -53,11 +52,19 @@ export class UsersUtilService {
     try {
       const pass = await UtilitiesService.hash(password);
       this.db.validateUser(userName, pass as string)
-        .then((info: any) => {
+        .then(async (info: any) => {
           if (info && info.length) {
-            const userInfo = { id: info[0]['id'], name: info[0]['name'] };
+            const userInfo = { 
+              id: info[0]['id'], 
+              name: info[0]['name'],
+              userName: info[0]['userName'] ,
+            };
             sessionStorage.setItem('user', JSON.stringify(userInfo));
-            sessionStorage.setItem('token', info[0]['token']);
+            if (info[0]['creator']) {
+              await this.updateUserToken(userName, info[0]['creator'])
+            } else {
+              sessionStorage.setItem('token', info[0]['token']);
+            }
           } else {
             alert("Invalid Credentials");
           }
@@ -65,5 +72,15 @@ export class UsersUtilService {
     } catch (error) {
       console.log('Error in login', error)
     }
+  }
+
+  async updateUserToken(email: string, creator: string) {
+    const token = UtilitiesService.generateToken();
+    await this.db.updateSelectedDocument(this.currentCollection, email, { token, creator })
+    sessionStorage.setItem('token', token);
+  }
+
+  deleteUser(email:  string) {
+    this.db.deleteDocumentFromCollection(this.currentCollection, email);
   }
 }
